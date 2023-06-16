@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>個人網頁</title>
+    <style>
+        body {
+            background-color: black;
+            color: orange;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: orange;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#speech">Speech</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="about" class="content">
+        <h2>About</h2>
+        <p>This is the About page.</p>
+    </div>
+
+    <div id="speech" class="content hidden">
+        <h2>Speech</h2>
+        <p>This is the Speech page.</p>
+    </div>
+
+    <div id="resume" class="content hidden">
+        <h2>Resume</h2>
+        <p>This is the Resume page.</p>
+    </div>
+
+    <div id="articles" class="content hidden">
+        <h2>Articles</h2>
+        <p>This is the Articles page.</p>
+    </div>
+
+    <div id="schedule" class="content hidden">
+        <h2>Schedule</h2>
+        <p>This is the Schedule page.</p>
+    </div>
+
+    <div id="contact" class="content hidden">
+        <h2>Contact</h2>
+        <p>This is the Contact page.</p>
+    </div>
+
+    <script>
+        // 選取導航欄的所有連結和對應的內容區塊
+        const navLinks = document.querySelectorAll('nav a');
+        const contentDivs = document.querySelectorAll('.content');
+
+        // 設定按鈕點擊事件處理函式
+        function handleNavClick(event) {
+            event.preventDefault();
+
+            // 隱藏所有內容區塊
+            contentDivs.forEach(div => {
+                div.classList.add('hidden');
+            });
+
+            // 顯示對應的內容區塊
+            const targetDivId = this.getAttribute('href').substr(1);
+            const targetDiv = document.getElementById(targetDivId);
+            targetDiv.classList.remove('hidden');
+        }
+
+        // 為每個按鈕設定點擊事件處理函式
+        navLinks.forEach(link => {
+            link.addEventListener('click', handleNavClick);
+        });
+    </script>
+</body>
+</html>
