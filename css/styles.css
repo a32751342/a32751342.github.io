@@ -1,0 +1,100 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto 0;
+    padding: 20px;
+}
+
+.menu {
+    background-color: gray;
+    padding: 10px;
+    text-align: right;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
+.menu a.selected {
+    color: yellow;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.sidebar {
+    background-color: black;
+    padding: 20px;
+    flex-basis: 30%;
+    border: 1px solid white;
+    margin-right: 20px;
+}
+
+.sidebar img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.sidebar h2, .sidebar p {
+    color: orange;
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-top: 5px; /* 調整上方間距 */
+}
+
+.contact-icon {
+    color: orange;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.contact-label {
+    color: rgb(197, 194, 194);
+    font-size: 17px;
+    margin-right: 5px; /* 調整右方間距 */
+}
+
+.main-content {
+    padding: 20px;
+    flex-basis: 70%;
+    border: 1px solid white;
+}
+
+.separator {
+    border-top: 1px dashed orange;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 16px;
+}
+.contact-info p a {
+    color: white; /* 設定文字顏色為白色 */
+    text-decoration: none;
+}
+
+.contact-info p a:hover {
+    text-decoration: underline;
+}

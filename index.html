@@ -2,112 +2,99 @@
 <html>
 <head>
     <title>個人網頁</title>
-    <style>
-        body {
-            background-color: black;
-            color: orange;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background-color: orange;
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        nav ul li a {
-            color: black;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css\styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#speech">Speech</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#articles">Articles</a></li>
-            <li><a href="#schedule">Schedule</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="sidebar">
+                <img src="assets\IMG_6316.jpg" alt="Profile Picture">
+                <h2>曾柏瑜</h2>
+                <p>南臺科技大學 資訊工程系</p>
+                <div class="separator"></div>
+                <div class="contact-info">
+                    <span class="contact-icon">&#9993;</span>
+                    <div>
+                        <span class="contact-label">EMAIL</span>
+                        <p><a href="zxc1112508@gmail.com">zxc1112508@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
 
-    <div id="about" class="content">
-        <h2>About</h2>
-        <p>This is the About page.</p>
-    </div>
+            <div class="main-content">
+                <div class="menu">
+                    <a href="#about" class="selected">About</a>
+                    <a href="#speech">Speech</a>
+                    <a href="#resume">Resume</a>
+                    <a href="#articles">Articles</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#contact">Contact</a>
+                </div>
 
-    <div id="speech" class="content hidden">
-        <h2>Speech</h2>
-        <p>This is the Speech page.</p>
-    </div>
+                <div id="about" class="content">
+                    <h2>About</h2>
+                    <p>This is the About page.</p>
+                </div>
 
-    <div id="resume" class="content hidden">
-        <h2>Resume</h2>
-        <p>This is the Resume page.</p>
-    </div>
+                <div id="speech" class="content hidden">
+                    <h2>Speech</h2>
+                    <p>This is the Speech page.</p>
+                </div>
 
-    <div id="articles" class="content hidden">
-        <h2>Articles</h2>
-        <p>This is the Articles page.</p>
-    </div>
+                <div id="resume" class="content hidden">
+                    <h2>Resume</h2>
+                    <p>This is the Resume page.</p>
+                </div>
 
-    <div id="schedule" class="content hidden">
-        <h2>Schedule</h2>
-        <p>This is the Schedule page.</p>
-    </div>
+                <div id="articles" class="content hidden">
+                    <h2>Articles</h2>
+                    <p>This is the Articles page.</p>
+                </div>
 
-    <div id="contact" class="content hidden">
-        <h2>Contact</h2>
-        <p>This is the Contact page.</p>
+                <div id="schedule" class="content hidden">
+                    <h2>Schedule</h2>
+                    <p>This is the Schedule page.</p>
+                </div>
+
+                <div id="contact" class="content hidden">
+                    <h2>Contact</h2>
+                    <div class="contact-info">
+                        <span class="contact-icon">&#9993;</span>
+                        <div>
+                            <span class="contact-label">EMAIL</span>
+                            <p><a href="zxc1112508@gmail.com">zxc1112508@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // 選取導航欄的所有連結和對應的內容區塊
-        const navLinks = document.querySelectorAll('nav a');
-        const contentDivs = document.querySelectorAll('.content');
+        const menuLinks = document.querySelectorAll('.menu a');
+        const contentSections = document.querySelectorAll('.content');
 
-        // 設定按鈕點擊事件處理函式
-        function handleNavClick(event) {
-            event.preventDefault();
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
 
-            // 隱藏所有內容區塊
-            contentDivs.forEach(div => {
-                div.classList.add('hidden');
+                // 移除先前選中的按鈕
+                menuLinks.forEach(link => {
+                    link.classList.remove('selected');
+                });
+
+                // 隱藏先前顯示的內容
+                contentSections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // 更新選中的按鈕
+                link.classList.add('selected');
+
+                // 顯示相應的內容
+                const target = link.getAttribute('href');
+                document.querySelector(target).classList.remove('hidden');
             });
-
-            // 顯示對應的內容區塊
-            const targetDivId = this.getAttribute('href').substr(1);
-            const targetDiv = document.getElementById(targetDivId);
-            targetDiv.classList.remove('hidden');
-        }
-
-        // 為每個按鈕設定點擊事件處理函式
-        navLinks.forEach(link => {
-            link.addEventListener('click', handleNavClick);
         });
     </script>
 </body>
