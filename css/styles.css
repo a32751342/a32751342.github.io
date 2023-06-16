@@ -98,7 +98,27 @@ body {
 .contact-info p a:hover {
     text-decoration: underline;
 }
+
 .contact-info .contact-label,
 .contact-info a {
     color: white;
 }
+
+.contact-info .contact-icon {
+    color: #ffffff;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .contact-info .contact-label {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .contact-info p {
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
