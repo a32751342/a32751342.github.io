@@ -66,7 +66,7 @@ body {
 }
 
 .contact-label {
-    color: gray;
+    color: orange;
     font-size: 17px;
     margin-right: 5px; /* 調整右方間距 */
 }
@@ -112,7 +112,7 @@ body {
 }
 
 .contact-info .contact-label {
-    color: orange;
+    color: gray; /* 將顏色設定為灰色 */
     font-size: 16px;
     font-weight: bold;
 }
