@@ -66,7 +66,7 @@ body {
 }
 
 .contact-label {
-    color: rgb(197, 194, 194);
+    color: gray;
     font-size: 17px;
     margin-right: 5px; /* 調整右方間距 */
 }
@@ -90,6 +90,7 @@ body {
     margin: 0;
     font-size: 16px;
 }
+
 .contact-info p a {
     color: white; /* 設定文字顏色為白色 */
     text-decoration: none;
@@ -101,24 +102,23 @@ body {
 
 .contact-info .contact-label,
 .contact-info a {
-    color: white;
+    color: gray;
 }
 
 .contact-info .contact-icon {
-    color: #ffffff;
+    color: white;
     font-size: 24px;
     margin-right: 10px;
-  }
-  
-  .contact-info .contact-label {
-    color: #ffffff;
+}
+
+.contact-info .contact-label {
+    color: orange;
     font-size: 16px;
     font-weight: bold;
-  }
-  
-  .contact-info p {
-    color: #ffffff;
+}
+
+.contact-info p {
+    color: white;
     font-size: 14px;
     margin-top: 5px;
-  }
-  
+}
