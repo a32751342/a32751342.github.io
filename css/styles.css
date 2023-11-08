@@ -122,3 +122,33 @@ body {
     font-size: 14px;
     margin-top: 5px;
 }
+
+.programming-languages .language {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.programming-languages .language-icon {
+    font-size: 24px; /* 调整图标的大小 */
+    margin-right: 10px; /* 可根据需要调整图标与名称之间的间距 */
+}
+
+.programming-languages .language-name {
+    font-size: 18px; /* 调整名称的大小 */
+}
+
+.fields .field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fields .field-icon {
+    font-size: 24px; /* 调整图标的大小 */
+    margin-right: 10px; /* 可根据需要调整图标与名称之间的间距 */
+}
+
+.fields .field-name {
+    font-size: 18px; /* 调整名称的大小 */
+}
